@@ -5,6 +5,7 @@ import java.util.HashSet;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PurpleFoxTest {
@@ -39,5 +40,13 @@ public class PurpleFoxTest {
 
         HashSet<EventService> expectedServices = new HashSet<>(Arrays.asList(servicesToAdd));
         assertTrue(purpleFox.getSelectedServices().containsAll(expectedServices));
+    }
+
+    @Test
+    void shouldSelectBudget() {
+
+        purpleFox.selectBudget(Budget.STANDARD);
+
+        assertEquals(Budget.STANDARD, purpleFox.getSelectedBudget());
     }
 }

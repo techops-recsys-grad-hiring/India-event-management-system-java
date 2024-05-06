@@ -4,6 +4,7 @@ import java.util.Set;
 public class PurpleFox {
     private final UserRegistration userRegistration;
     private final Set<EventService> selectedServices;
+    private Budget selectedBudget;
 
     public PurpleFox() {
          this.userRegistration = new UserRegistration();
@@ -24,5 +25,13 @@ public class PurpleFox {
 
     public Set<EventService> getSelectedServices() {
         return selectedServices;
+    }
+
+    public void selectBudget(Budget budget) {
+        selectedBudget = budget;
+    }
+
+    public Budget getSelectedBudget() {
+        return selectedBudget;
     }
 }
