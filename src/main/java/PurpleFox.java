@@ -1,3 +1,4 @@
+import java.util.EnumSet;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,6 +23,10 @@ public class PurpleFox {
 
     public OccasionType getSelectedEvent() {
         return selectedOccasionType;
+    }
+
+    public EnumSet<City> supportedCities() {
+        return EnumSet.allOf(City.class);
     }
 
     public void selectService(EventService service) {

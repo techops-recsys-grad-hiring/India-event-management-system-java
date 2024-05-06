@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import java.util.Arrays;
+import java.util.EnumSet;
 import java.util.HashSet;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -22,6 +23,13 @@ public class PurpleFoxTest {
         boolean registered = purpleFox.registerUser("Aditya", "Aditya369");
 
         assertTrue(registered);
+    }
+
+    @Test
+    void shouldReturnSupportedCities() {
+        EnumSet<City> supportedCities = purpleFox.supportedCities();
+
+        assertEquals(EnumSet.allOf(City.class), supportedCities);
     }
 
     @Test
