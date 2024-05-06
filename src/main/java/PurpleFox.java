@@ -21,4 +21,8 @@ public class PurpleFox {
     public boolean isServiceSelected(EventService service) {
         return selectedServices.contains(service);
     }
+
+    public Set<EventService> getSelectedServices() {
+        return selectedServices;
+    }
 }

@@ -1,4 +1,7 @@
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import java.util.Arrays;
+import java.util.HashSet;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -8,6 +11,7 @@ public class PurpleFoxTest {
 
     @Test
     void shouldReturnTrueIfAUserIsRegistered() {
+
         PurpleFox purpleFox = new PurpleFox();
 
         boolean registered = purpleFox.registerUser("Aditya", "Aditya369");
@@ -23,5 +27,17 @@ public class PurpleFoxTest {
         purpleFox.selectService(EventService.DECORATION);
 
         assertThat(purpleFox.isServiceSelected(EventService.DECORATION), is(true));
+    }
+
+    @Test
+    void shouldAddMultipleServicesToTheSelectedServiceList() {
+
+        PurpleFox purpleFox = new PurpleFox();
+        EventService[] servicesToAdd = {EventService.PHOTOGRAPHY, EventService.DECORATION};
+
+        Arrays.stream(servicesToAdd).forEach(purpleFox::selectService);
+
+        HashSet<EventService> expectedServices = new HashSet<>(Arrays.asList(servicesToAdd));
+        assertTrue(purpleFox.getSelectedServices().containsAll(expectedServices));
     }
 }
