@@ -33,6 +33,13 @@ public class PurpleFoxTest {
     }
 
     @Test
+    void shouldSelectCityForVenue() {
+        purpleFox.selectCityForVenue(City.HYDERABAD);
+
+        assertEquals(City.HYDERABAD, purpleFox.getSelectedCity());
+    }
+
+    @Test
     void shouldSelectEventType() {
         purpleFox.selectOccasionType(OccasionType.MARRIAGE);
 

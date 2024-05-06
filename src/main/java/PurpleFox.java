@@ -7,6 +7,7 @@ public class PurpleFox {
     private OccasionType selectedOccasionType;
     private final Set<EventService> selectedServices;
     private Budget selectedBudget;
+    private City selectedCity;
 
     public PurpleFox() {
          this.userRegistration = new UserRegistration();
@@ -27,6 +28,14 @@ public class PurpleFox {
 
     public EnumSet<City> supportedCities() {
         return EnumSet.allOf(City.class);
+    }
+
+    public void selectCityForVenue(City city) {
+        selectedCity = city;
+    }
+
+    public City getSelectedCity() {
+        return selectedCity;
     }
 
     public void selectService(EventService service) {
