@@ -1,9 +1,9 @@
 import java.util.HashMap;
 
-public class PurpleFox {
+public class UserRegistration {
     private HashMap<String, String> users;
 
-    public PurpleFox() {
+    public UserRegistration() {
         users = new HashMap<>();
     }
 
