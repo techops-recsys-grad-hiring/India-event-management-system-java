@@ -21,4 +21,6 @@ public class PurpleFoxTest {
 
         assertFalse(registeredUser);
     }
+
+
 }
