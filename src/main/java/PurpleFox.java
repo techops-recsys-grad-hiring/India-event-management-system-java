@@ -2,8 +2,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class PurpleFox {
-    private UserRegistration userRegistration;
-    private Set<EventService> selectedServices;
+    private final UserRegistration userRegistration;
+    private final Set<EventService> selectedServices;
 
     public PurpleFox() {
          this.userRegistration = new UserRegistration();

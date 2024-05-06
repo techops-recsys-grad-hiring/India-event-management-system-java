@@ -8,11 +8,15 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PurpleFoxTest {
+    private static PurpleFox purpleFox;
+
+    @BeforeAll
+    static void setUp() {
+        purpleFox = new PurpleFox();
+    }
 
     @Test
     void shouldReturnTrueIfAUserIsRegistered() {
-
-        PurpleFox purpleFox = new PurpleFox();
 
         boolean registered = purpleFox.registerUser("Aditya", "Aditya369");
 
@@ -22,8 +26,6 @@ public class PurpleFoxTest {
     @Test
     void shouldAddServiceToSelectedServices() {
 
-        PurpleFox purpleFox = new PurpleFox();
-
         purpleFox.selectService(EventService.DECORATION);
 
         assertThat(purpleFox.isServiceSelected(EventService.DECORATION), is(true));
@@ -31,8 +33,6 @@ public class PurpleFoxTest {
 
     @Test
     void shouldAddMultipleServicesToTheSelectedServiceList() {
-
-        PurpleFox purpleFox = new PurpleFox();
         EventService[] servicesToAdd = {EventService.PHOTOGRAPHY, EventService.DECORATION};
 
         Arrays.stream(servicesToAdd).forEach(purpleFox::selectService);
