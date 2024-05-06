@@ -1,3 +1,7 @@
+import enums.Budget;
+import enums.City;
+import enums.EventService;
+import enums.OccasionType;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import java.util.Arrays;

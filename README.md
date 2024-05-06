@@ -6,7 +6,7 @@ Requirement 2- As a user, I want to provide details about the type of event I'm 
 
 Requirement 2- As a user, I want the flexibility to choose any combination of services, knowing that my selections are optional and based on my specific event needs.
 
-Requirement 3- As a user, I want to choose my budget preference from options provided by UserRegistration, such as Budget-friendly, Standard, and Premium, so that I can tailor my event planning to my financial constraints or preferences.
+Requirement 3- As a user, I want to choose my budget preference from options provided by UserRegistration, such as enums.Budget-friendly, Standard, and Premium, so that I can tailor my event planning to my financial constraints or preferences.
 
 Requirement 4- As a user, I expect UserRegistration to calculate the total cost of my selected services based on my budget preference, providing me with a detailed quotation for review.
 
