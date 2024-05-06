@@ -3,6 +3,7 @@ import java.util.Set;
 
 public class PurpleFox {
     private final UserRegistration userRegistration;
+    private OccasionType selectedOccasionType;
     private final Set<EventService> selectedServices;
     private Budget selectedBudget;
 
@@ -13,6 +14,14 @@ public class PurpleFox {
 
     public boolean registerUser(String username, String password) {
         return userRegistration.register(username, password);
+    }
+
+    public void selectOccasionType(OccasionType event) {
+        selectedOccasionType = event;
+    }
+
+    public OccasionType getSelectedEvent() {
+        return selectedOccasionType;
     }
 
     public void selectService(EventService service) {

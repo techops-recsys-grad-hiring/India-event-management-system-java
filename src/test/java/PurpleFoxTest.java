@@ -25,6 +25,13 @@ public class PurpleFoxTest {
     }
 
     @Test
+    void shouldSelectEventType() {
+        purpleFox.selectOccasionType(OccasionType.MARRIAGE);
+
+        assertEquals(OccasionType.MARRIAGE, purpleFox.getSelectedEvent());
+    }
+
+    @Test
     void shouldAddServiceToSelectedServices() {
 
         purpleFox.selectService(EventService.DECORATION);
