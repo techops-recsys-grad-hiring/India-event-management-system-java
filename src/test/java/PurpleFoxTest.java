@@ -45,9 +45,9 @@ public class PurpleFoxTest {
 
     @Test
     void shouldSelectEventType() {
-        purpleFox.selectOccasionType(OccasionType.MARRIAGE);
+        purpleFox.selectOccasionType(OccasionType.WEDDING);
 
-        assertEquals(OccasionType.MARRIAGE, purpleFox.getSelectedEvent());
+        assertEquals(OccasionType.WEDDING, purpleFox.getSelectedEvent());
     }
 
     @Test

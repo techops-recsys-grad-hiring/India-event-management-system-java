@@ -1,6 +1,6 @@
 package enums;
 
 public enum OccasionType {
-    MARRIAGE,
+    WEDDING,
     BIRTHDAY
 }
