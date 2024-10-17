@@ -44,15 +44,26 @@ public class EventManagement {
         OccasionType selectedOccasion = OccasionType.valueOf(occasionChoice.toUpperCase());
         purpleFox.selectOccasionType(selectedOccasion);
 
-        System.out.println("Select services for your event from the following options:");
+        System.out.println("Select services for your event from the following options (enter 'done' to finish):");
         for (EventService service : EventService.values()) {
             System.out.println("- " + service);
         }
-        System.out.print("Enter your choice: ");
-        String serviceChoice = scanner.nextLine();
-        EventService selectedService = EventService.valueOf(serviceChoice.toUpperCase());
-        purpleFox.selectService(selectedService);
 
+        HashSet<EventService> selectedServices = new HashSet<>();
+        while (true) {
+            System.out.print("Enter a service (or 'done' to finish): ");
+            String serviceChoice = scanner.nextLine().toUpperCase();
+            if (serviceChoice.equals("DONE")) {
+                break;
+            }
+            try {
+                EventService selectedService = EventService.valueOf(serviceChoice);
+                selectedServices.add(selectedService);
+                purpleFox.selectService(selectedService);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Invalid service. Please try again.");
+            }
+        }
         System.out.println("Select a budget preference from the following options:");
         for (Budget budget : Budget.values()) {
             System.out.println("- " + budget);
